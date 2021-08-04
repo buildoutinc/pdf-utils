@@ -1,0 +1,21 @@
+{
+  "name": "pdf-utils",
+  "version": "0.1.0",
+  "description": "PDF Utilities for Buildout document creation",
+  "main": "index.js",
+  "files": [
+    "lib/**/*"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/minimist": "^1.2.2",
+    "@types/node": "^16.4.11",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "minimist": "^1.2.5"
+  }
+}
