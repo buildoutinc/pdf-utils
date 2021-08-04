@@ -1,8 +1,12 @@
 {
-  "name": "pdf-utils",
-  "version": "0.1.0",
+  "name": "@buildoutinc/pdf-utils",
+  "version": "0.1.2",
   "description": "PDF Utilities for Buildout document creation",
-  "main": "index.js",
+  "repository": "git://github.com/buildoutinc/pdf-utils.git",
+  "main": "lib/index.js",
+  "bin": {
+    "pdf-utils": "./lib/cmd.js"
+  },
   "files": [
     "lib/**/*"
   ],
@@ -11,11 +15,16 @@
     "build": "tsc"
   },
   "devDependencies": {
-    "@types/minimist": "^1.2.2",
     "@types/node": "^16.4.11",
+    "@typescript-eslint/eslint-plugin": "^4.29.0",
+    "@typescript-eslint/parser": "^4.29.0",
+    "eslint": "^7.32.0",
     "typescript": "^4.3.5"
   },
   "dependencies": {
-    "minimist": "^1.2.5"
+    "pdf-lib": "^1.16.0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   }
 }
