@@ -5,7 +5,10 @@ This is a work in progress.
 
 # Install
 
-yarn add 'https://github.com/buildoutinc/pdf-utils'
+    yarn add 'https://github.com/buildoutinc/pdf-utils'
+
+Run the same command to update.
+
 
 # Usage
 
