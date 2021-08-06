@@ -1,3 +1,4 @@
 node_modules
-/lib
+# Temporarily disabled - tsc output files must be committed - see README.md
+# /lib
 yarn-error.log

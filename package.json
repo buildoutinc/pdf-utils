@@ -1,6 +1,6 @@
 {
   "name": "@buildoutinc/pdf-utils",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "PDF Utilities for Buildout document creation",
   "repository": "git://github.com/buildoutinc/pdf-utils.git",
   "main": "lib/index.js",
@@ -12,8 +12,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
-    "prepare": "tsc"
+    "build": "tsc"
   },
   "devDependencies": {
     "@types/node": "^16.4.11",

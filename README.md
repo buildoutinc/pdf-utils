@@ -37,4 +37,7 @@ If you omit the JSON argument, defaults will be used.
 
 # Contributing
 
-Since the source is TypeScript, proper installation requires the package.json scripts.prepare value to build the .ts files.
+Due to a yarn [race condiiton](https://github.com/yarnpkg/yarn/issues/7212#issuecomment-493720651), do not add entries
+under "scripts" in package.json that would be run during installation. While it would be convenient to have TypeScript
+compiled during install via a "prepare" entry, we'll just need to compile manually and commit the resulting files to the
+repo.
