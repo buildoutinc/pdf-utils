@@ -4,11 +4,13 @@ import { PDFDocument, PDFName, PDFString } from 'pdf-lib';
 type PdfUtilsConfig = {
   language?: string;
   title?: string;
+  displayDocTitle?: boolean;
 };
 
 type PdfOutputData = {
   language: string | undefined;
   title: string | undefined;
+  displayDocTitle: boolean;
 };
 
 const DEFAULTS = {
@@ -65,6 +67,17 @@ export default class PdfUtils {
     return this.getDoc().getTitle();
   }
 
+  // Controls what displays in the viewer's titlebar:
+  // true: display the document's title (accessibility requirement)
+  // false: display the filename
+  setDisplayDocTitle(bool = true): void {
+    this.getDoc().catalog.getOrCreateViewerPreferences().setDisplayDocTitle(bool);
+  }
+
+  getDisplayDocTitle(): boolean {
+    return this.getDoc().catalog.getOrCreateViewerPreferences().getDisplayDocTitle();
+  }
+
   // ===== STATIC CONVENIENCE METHODS =====
 
   // To overwrite the input file, use the same value for inputFilePath & outputFilePath.
@@ -76,6 +89,7 @@ export default class PdfUtils {
 
     pdfUtil.setLanguage(options.language || DEFAULTS.lang);
     pdfUtil.setTitle(options.title || DEFAULTS.title);
+    pdfUtil.setDisplayDocTitle(typeof options.displayDocTitle !== 'undefined' ? options.displayDocTitle : true);
 
     await pdfUtil.writeFile(outputFilePath);
   }
@@ -86,6 +100,7 @@ export default class PdfUtils {
     return {
       language: pdfUtil.getLanguage(),
       title: pdfUtil.getTitle(),
+      displayDocTitle: pdfUtil.getDisplayDocTitle(),
     };
   }
 

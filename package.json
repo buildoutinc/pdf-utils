@@ -1,6 +1,6 @@
 {
   "name": "@buildoutinc/pdf-utils",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "PDF Utilities for Buildout document creation",
   "repository": "git://github.com/buildoutinc/pdf-utils.git",
   "main": "lib/index.js",
